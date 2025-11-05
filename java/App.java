@@ -1,6 +1,7 @@
 
 import controller.CollectibleController;
 import controller.WebSocketPriceChannel;
+import store.exception.GlobalExceptionHandler;
 
 //import spark.template.mustache.MustacheTemplateEngine;
 
@@ -19,7 +20,10 @@ public class App {
 //        get("/", (req, res) -> new ModelAndView(null, "index.mustache"),
 //                new MustacheTemplateEngine()
 //        );
-
+        GlobalExceptionHandler.register();
         new CollectibleController().routes();
+
     }
 }
+
+

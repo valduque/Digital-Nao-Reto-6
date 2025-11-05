@@ -3,6 +3,9 @@ package controller;
 import com.google.gson.Gson;
 import model.Collectible;
 import service.CollectibleService;
+import store.exception.BadRequestException;
+
+import java.math.BigDecimal;
 
 import static spark.Spark.*;
 
@@ -75,7 +78,20 @@ public class CollectibleController {
                 boolean deleted = service.delete(id);
                 return "{ \"deleted\": " + deleted + " }";
             });
+
+            post("/:id/offer", (req, res) -> {
+                res.type("application/json");
+                Long id = Long.valueOf(req.params("id"));
+                BigDecimal offer = new BigDecimal(req.queryParams("offer"));
+
+                boolean updated = service.placeOffer(id, offer);
+                res.status(200);
+                return "{ \"offerAccepted\": " + updated + " }";
+            });
+
+
         });
+
     }
 }
 

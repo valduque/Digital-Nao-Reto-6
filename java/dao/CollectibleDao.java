@@ -52,6 +52,16 @@ public class CollectibleDao {
                 })
                 .orElse(false);
     }
+    public boolean updatePrice(Long id, BigDecimal newPrice) {
+        return data.stream()
+                .filter(x -> Objects.equals(x.getId(), id))
+                .findFirst()
+                .map(x -> {
+                    x.setPrice(newPrice);
+                    return true;
+                })
+                .orElse(false);
+    }
 
     public boolean delete(Long id) {
         return data.removeIf(x -> Objects.equals(x.getId(), id));
