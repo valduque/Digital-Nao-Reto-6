@@ -1,4 +1,6 @@
-# 🛍️ Tienda en Línea — Spark Java (Modelo MCS)
+# JAVA SPARK FOR WEB APPS
+
+## 🛍️ Tienda en Línea — Spark Java (Modelo MCS)
 
 Este proyecto implementa una **API web** para una tienda en línea de artículos coleccionables, desarrollada con **Java 17**, **Spark Framework** y **Mustache** para las vistas.  
 Sigue el patrón **MCS (Modelo - Controlador - Servicio)** y utiliza **Maven** para la gestión de dependencias.
@@ -43,14 +45,22 @@ En tu `pom.xml` asegúrate de incluir lo siguiente:
         <scope>provided</scope>
     </dependency>
 </dependencies>
+```
 
 
-🧠 Arquitectura (MCS)
+## 🧠 Arquitectura (MCS)  
+<br>  
 Capa	Descripción	Ejemplo
+<br>
 Modelo (Model)	Define la estructura de datos de los artículos	Item.java
+<br>
 Controlador (Controller)	Maneja las rutas y solicitudes HTTP	ItemController.java
+<br>
 Servicio (Service)	Contiene la lógica de negocio	ItemService.java
-🧩 Funcionalidades
+
+<br>  
+
+## 🧩 Funcionalidades
 
 Listar artículos
 Muestra todos los artículos disponibles en el sistema.
@@ -64,8 +74,8 @@ Permite a los usuarios enviar una oferta por un artículo.
 Manejo de excepciones personalizadas
 Implementación de BadRequestException y NotFoundException.
 
-🧪 Endpoints de la API
-Método	Endpoint	Descripción
-GET	/items	Lista todos los artículos disponibles
-GET	/items/:id	Muestra los detalles de un artículo específico
+## 🧪 Endpoints de la API
+Método	Endpoint	Descripción  
+GET	/items	Lista todos los artículos disponibles  
+GET	/items/:id	Muestra los detalles de un artículo específico  
 POST	/offers	Envía una oferta por un artículo
